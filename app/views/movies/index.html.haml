@@ -6,14 +6,17 @@
   -#- @all_ratings.each do |rating|
   -#  = rating
   -#= check_box_tag "ratings[#{rating}]"  
-  -if @rating_first
-    - @all_ratings.each do |rating|
-      = rating
-      = check_box_tag "ratings[#{rating}]" , 1, true   #ratings[PG-13]
-  -else
-    - @all_ratings.each do |rating|
-      = rating
-      = check_box_tag "ratings[#{rating}]" , 1, @set_ratings.key?(rating) 
+  -#-if @rating_first
+    -#- @all_ratings.each do |rating|
+      -#= rating
+      -#= check_box_tag "ratings[#{rating}]" , 1, true   #ratings[PG-13]
+  -#-else
+    -#- @all_ratings.each do |rating|
+      -#= rating
+      -#= check_box_tag "ratings[#{rating}]" , 1, @set_ratings.key?(rating) 
+  - @all_ratingmovie.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]" , 1, @set_ratings.key?(rating) 
   = submit_tag 'Refresh', :id => 'ratings_submit'
 
 %table#movies
